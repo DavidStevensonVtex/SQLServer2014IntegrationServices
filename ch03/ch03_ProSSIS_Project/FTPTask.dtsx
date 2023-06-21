@@ -1,0 +1,94 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/16/2023 1:30:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DSTEVENSONWIN10"
+  DTS:CreatorName="DSTEVENSONWIN10\drste"
+  DTS:DTSID="{9B003723-165B-4D9B-8AFB-A66390228F5A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{BA198805-CA37-41BD-81B5-038C900FC1BD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FTP Connection Manager]"
+      DTS:CreationName="FTP"
+      DTS:DTSID="{6D6EFFD1-D663-42D8-95CC-4473688A4E58}"
+      DTS:ObjectName="FTP Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="ftp.dlptest.com:21">
+          <DTS:FtpConnection
+            DTS:ServerName="ftp.dlptest.com"
+            DTS:ServerUserName="dlpuser"
+            DTS:UsePassiveMode="False">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMVMKMFx6xke8p/ASwTvNHgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA1xqoVodWqTH2gXFLmOjrno/1zF2p6Ofzn9JG3yffpIQAAAAAOgAAAAAIAACAAAADb7BVo8Vb3ro1Pl7N8jEHTy75pPSig5mjWF1KdkEzOBUAAAABpGOe9SeuHDFaoZLBx7yTaIVz/lRf8IyFUrwrU+YOWg5y0aOkrEW3QMiuykqzrjot77isNKFfA6QuhEd6penv1QAAAABU/ysc/wtt3xwGSa9fRpm+TAnM6nAsp/nbsJew/DGASWFOJF6AGkDpSBh/zY53dyIkdipEiIPr1ipgPkivk2Pw</DTS:Property>
+          </DTS:FtpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FTP Folder Destination]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{76A291C9-0490-4B51-A011-C21D666363A2}"
+      DTS:ObjectName="FTP Folder Destination">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="D:\ProSSIS\Tasks\FTPTask" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DLP Test FTP Task"
+      DTS:CreationName="Microsoft.FtpTask"
+      DTS:Description="FTP Task"
+      DTS:DTSID="{E5D50A21-699A-4A2F-B10B-832B52DDCABE}"
+      DTS:ExecutableType="Microsoft.FtpTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DLP Test FTP Task"
+      DTS:TaskContact="FTP Task; Microsoft Corporation; SQL Server 2022; (c) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FtpData
+          ConnectionName="{6D6EFFD1-D663-42D8-95CC-4473688A4E58}"
+          TaskOperationType="Receive"
+          TaskLocalPath="FTP Folder Destination"
+          TaskRemotePath="/reda/REP1286.csv"
+          TaskTransferAscii="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\DLP Test FTP Task"
+          TopLeft="357.499980467062,253.066664906873" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

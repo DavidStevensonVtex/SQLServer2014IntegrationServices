@@ -1,0 +1,124 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/16/2023 12:41:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DSTEVENSONWIN10"
+  DTS:CreatorName="DSTEVENSONWIN10\drste"
+  DTS:DTSID="{624B5D45-D2E2-4E70-BD21-9336EA6B80A2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5209.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{1D9F8D6C-8980-487D-8CF7-3C046A1A4A95}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DataProfile..copy.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{4BA2B1D7-CE1B-4413-82BE-CBC5682B143D}"
+      DTS:ObjectName="DataProfile..copy.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="D:\drs\SQLServer\SSIS2014\Work\ch03\DataProfile..copy.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DataProfile.xml]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{96C1FEF2-1CD4-47B1-BE18-1D3C0C502F1D}"
+      DTS:ObjectName="DataProfile.xml">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="D:\drs\SQLServer\SSIS2014\Work\ch03\DataProfile.xml" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DLP FTP Connection]"
+      DTS:CreationName="FTP"
+      DTS:DTSID="{7348CB54-E208-44AE-B774-4E677B936721}"
+      DTS:ObjectName="DLP FTP Connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="ftp.dlptest.com:21">
+          <DTS:FtpConnection
+            DTS:ServerName="ftp.dlptest.com"
+            DTS:ServerUserName="dlpuser"
+            DTS:UsePassiveMode="False">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAMVMKMFx6xke8p/ASwTvNHgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC984XL5G0fqKHiYPLct6hNWGO/12cqpIijX85t537cnAAAAAAOgAAAAAIAACAAAACNui95uTLULG/Efuo4HDtptfolg75f0xfYytUmniYGZkAAAAAHrcV/9UF++7VcGwAKAjzdf4cC4ZpGWfXltXq6ExUfklVcLiLW6yhNnLzv2d68ozhTKlQLb8k1HgXqoYO/djkcQAAAABfS7wzPiOwONF/OxVznrv09fyK6tMXicr4NIax4dDx6aMuoosEysoOTP+KbTggUIkrD3cF8TwTrbpi0oW8waCE</DTS:Property>
+          </DTS:FtpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[myfile.txt destination]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{9FC700B7-FEA3-4685-BAA9-3E2B70D4FF1F}"
+      DTS:ObjectName="myfile.txt destination">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="D:\ProSSIS\Tasks\FileSystemTask\Archive\myfile.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[myfile.txt source]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{64D13205-AAEB-4008-9C84-EC02B324E8EB}"
+      DTS:ObjectName="myfile.txt source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="D:\ProSSIS\Tasks\FileSystemTask\myfile.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\File System Task"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{2493EBCC-62B7-49C4-9252-F2F9AADF9F80}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="File System Task"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="MoveFile"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="{64D13205-AAEB-4008-9C84-EC02B324E8EB}"
+          TaskDestinationPath="{9FC700B7-FEA3-4685-BAA9-3E2B70D4FF1F}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\File System Task"
+          TopLeft="283.333317852683,196.733331965274" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
