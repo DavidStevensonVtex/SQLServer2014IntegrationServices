@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="localhost_SQL_2022.AdventureWorksDW1"
+  DTS:DTSID="{BBAB00BA-2BB0-49BF-ACEE-4D25A6FF61D1}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=localhost\SQL_2022;Initial Catalog=AdventureWorksDW;Integrated Security=True;Application Name=SSIS-ch04_ProSSIS_DataFlow-{BBAB00BA-2BB0-49BF-ACEE-4D25A6FF61D1}localhost\SQL_2022.AdventureWorksDW1;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
