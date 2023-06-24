@@ -1,0 +1,273 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/26/2023 4:40:22 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DSTEVENSONWIN10"
+  DTS:CreatorName="DSTEVENSONWIN10\drste"
+  DTS:DTSID="{C0D58652-4E8C-4E58-AAE3-188895374B3B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{31E833C9-4ECD-4E3A-AF8D-D080DA259A1B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[archive]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{F019AE81-0941-4F6D-A80E-4851E83032BF}"
+      DTS:ObjectName="archive">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="D:\ProSSIS\ch05\archive\abc.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ch05]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{A2F81003-6F46-436B-A786-5BC033E064B7}"
+      DTS:ObjectName="ch05">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="D:\ProSSIS\ch05\abc.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost\SQL_2022.AdventureWorks]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{52F4B18E-4B20-4205-BE0A-11F0E020F0A8}"
+      DTS:ObjectName="localhost\SQL_2022.AdventureWorks">
+      <DTS:PropertyExpression
+        DTS:Name="ServerName">@[User::SourceServerNamedInstance]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=localhost\SQL_2022;Initial Catalog=AdventureWorks;Integrated Security=True;Application Name=SSIS-Package-{52F4B18E-4B20-4205-BE0A-11F0E020F0A8}localhost\SQL_2022.AdventureWorks;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{BA419D0E-FEAD-410B-AABF-C4B71521545A}"
+      DTS:ObjectName="BankFileSourcePath">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">D:\ProSSIS\ch05</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7011F7B1-5828-48A6-B206-4CFB569D0684}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DeleteSQL">
+      <DTS:VariableValue
+        DTS:DataType="8">DELETE FROM tblStaging WHERE RunJobId = </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{31D65074-A7BD-41A6-92B8-E6B8241748F2}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="DeleteSQL_RunJobId">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{83CF3275-64B6-4625-8998-19FC9C5A165E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerName">
+      <DTS:VariableValue
+        DTS:DataType="8">localhost\SQL_2022</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{88BA9955-3DA6-454D-8B05-EC1E96322E79}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceServerNamedInstance">
+      <DTS:VariableValue
+        DTS:DataType="8">localhost\SQL_2022</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{791DA5BD-C03E-4141-B8A0-EE180076A268}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="SqlStatementSource">@[User::DeleteSQL] + (DT_WSTR, 8)  @[User::DeleteSQL_RunJobId]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:SqlStatementSource="DELETE FROM tblStaging WHERE RunJobId = 0" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{23AE0A32-0FCA-4405-B7CC-41716E57F1D5}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachItemEnumerator"
+        DTS:DTSID="{ADFCFEFA-0C4D-4B57-89FD-2539205D3334}"
+        DTS:ObjectName="{ADFCFEFA-0C4D-4B57-89FD-2539205D3334}">
+        <DTS:ObjectData />
+      </DTS:ForEachEnumerator>
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{B5AC0FA9-BF96-4FDC-ACFF-459D8D3F921C}"
+          DTS:EvaluateAsExpression="True"
+          DTS:Expression="@[User::BankFileDestinationFolder] + &quot;\\&quot; +  &#xA;(DT_WSTR,4) YEAR(GETDATE())   +&#xA;(DT_WSTR,2) MONTH(GETDATE()) +&#xA;(DT_WSTR,2) DAY(GETDATE()) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;hh&quot;, GETDATE()), 2) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;mi&quot;, GETDATE()), 2) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;ss&quot;, GETDATE()), 2) +&#xA;@[User::BankFileExtension]"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="BankFileDestinationFile">
+          <DTS:VariableValue
+            DTS:DataType="8">D:\ProSSIS\ch05\archive\2023527130549.txt</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{A7D3EBA2-74C5-44D1-933C-8843350ADD78}"
+          DTS:EvaluateAsExpression="True"
+          DTS:Expression="@[$Package::BankFileSourcePath] + &quot;\\archive&quot;"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="BankFileDestinationFolder">
+          <DTS:VariableValue
+            DTS:DataType="8">D:\ProSSIS\ch05\archive</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{666945A8-CFAB-4FCC-A6CC-9804CF6CE386}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="BankFileExtension">
+          <DTS:VariableValue
+            DTS:DataType="8">.txt</DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{C9D0898F-1131-4D78-A884-A3FE8CDE0AE4}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="BankFileName">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{414D7AF2-394C-426A-86FB-C7A0A2A63C05}"
+          DTS:EvaluateAsExpression="True"
+          DTS:Expression="@[$Package::BankFileSourcePath] + &quot;\\&quot; +  &#xA;(DT_WSTR,4) YEAR(GETDATE())   +&#xA;(DT_WSTR,2) MONTH(GETDATE()) +&#xA;(DT_WSTR,2) DAY(GETDATE()) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;hh&quot;, GETDATE()), 2) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;mi&quot;, GETDATE()), 2) +&#xA;RIGHT(&quot;0&quot; + (DT_WSTR, 2) DATEPART(&quot;ss&quot;, GETDATE()), 2) +&#xA;@[User::BankFileExtension]"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="BankFileSourceFile">
+          <DTS:VariableValue
+            DTS:DataType="8">D:\ProSSIS\ch05\2023527130549.txt</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\File System Task"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="File System Task"
+          DTS:DTSID="{3DFE1806-3C1C-49A7-8648-6266269681F4}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="File System Task"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="MoveFile"
+              TaskSourcePath="{A2F81003-6F46-436B-A786-5BC033E064B7}"
+              TaskDestinationPath="{F019AE81-0941-4F6D-A80E-4851E83032BF}" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{7A3CA804-AB70-4000-B2F9-3E29D2C11256}"
+          DTS:ObjectName="{7A3CA804-AB70-4000-B2F9-3E29D2C11256}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::BankFileDestinationInfo" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{E8EBC23F-8184-41A7-A8E6-AB79965F61C6}"
+          DTS:ObjectName="{E8EBC23F-8184-41A7-A8E6-AB79965F61C6}"
+          DTS:ValueIndex="1"
+          DTS:VariableName="User::BankFileDestinationFile" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{1B3BF7A3-0AB6-40FF-9F51-E1DC77C5E02D}"
+          DTS:ObjectName="{1B3BF7A3-0AB6-40FF-9F51-E1DC77C5E02D}"
+          DTS:ValueIndex="2"
+          DTS:VariableName="User::BankFileExtension" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{08DC78F1-3BC2-46C5-ACE9-C27D4DD71016}"
+          DTS:ObjectName="{08DC78F1-3BC2-46C5-ACE9-C27D4DD71016}"
+          DTS:ValueIndex="3"
+          DTS:VariableName="User::BankFileName" />
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{94F5F18B-B105-4563-A675-543B8F36AAF4}"
+          DTS:ObjectName="{94F5F18B-B105-4563-A675-543B8F36AAF4}"
+          DTS:ValueIndex="4"
+          DTS:VariableName="User::BankFileSourceFile" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\Foreach Loop Container\File System Task"
+          TopLeft="71.0666439010047,49.266664961113" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="278.4,159.2"
+          Size="278.4,202.4"
+          Id="Package\Foreach Loop Container"
+          TopLeft="77.4999917795265,59.7999982023243" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="593.333309756386,136.933334421582" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
