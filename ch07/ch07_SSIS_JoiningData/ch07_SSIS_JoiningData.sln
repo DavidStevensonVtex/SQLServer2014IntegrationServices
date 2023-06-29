@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33529.622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "ch07_SSIS_JoiningData", "ch07_SSIS_JoiningData.dtproj", "{B35B0620-2B21-480C-8A12-6D86C27AAB22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B35B0620-2B21-480C-8A12-6D86C27AAB22}.Development|Default.ActiveCfg = Development
+		{B35B0620-2B21-480C-8A12-6D86C27AAB22}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BDCF7CF-1A0A-4419-B851-CEE2F0BCFD6E}
+	EndGlobalSection
+EndGlobal
