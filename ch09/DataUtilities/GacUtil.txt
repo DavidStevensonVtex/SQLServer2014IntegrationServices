@@ -1,0 +1,14 @@
+﻿Be sure to open Visual Studio 2019 as administrator.
+
+GacUtil /i bin/Release/DataUtilities.dll
+
+
+**********************************************************************
+** Visual Studio 2019 Developer PowerShell v16.11.26
+** Copyright (c) 2021 Microsoft Corporation
+**********************************************************************
+PS D:\drs\SQLServer\SSIS2014\Work\ch09\DataUtilities> GacUtil /i bin/Release/DataUtilities.dll
+Microsoft (R) .NET Global Assembly Cache Utility.  Version 4.0.30319.0
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Assembly successfully added to the cache
