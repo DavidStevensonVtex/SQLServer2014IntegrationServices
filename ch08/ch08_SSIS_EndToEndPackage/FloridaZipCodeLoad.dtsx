@@ -1,0 +1,634 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/29/2023 6:16:23 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DSTEVENSONWIN10"
+  DTS:CreatorName="DSTEVENSONWIN10\drste"
+  DTS:DTSID="{8676B2ED-4069-4795-9E9D-A222770A92F0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{AFB0BBD4-E25D-4DC1-8C96-6E81A1114165}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load ZipCode Data"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{668594C2-2902-4A67-A9D1-5A7CF417C2B2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load ZipCode Data"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load ZipCode Data\Florida ZipCode File"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Florida ZipCode File"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ZipCode Data\Florida ZipCode File.Connections[FlatFileConnection]"
+                  connectionManagerID="{9887B3CE-DF11-4DFA-BCAC-44662B76B053}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[FF_ZipCode_CSV]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[StateFIPCode]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[StateFIPCode]"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[StateFIPCode]"
+                      name="StateFIPCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[ZipCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[ZipCode]"
+                      length="5"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[ZipCode]"
+                      name="ZipCode"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[StateAbbr]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[StateAbbr]"
+                      length="2"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[StateAbbr]"
+                      name="StateAbbr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      length="16"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[Longitude]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[Longitude]"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[Longitude]"
+                      name="Longitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[Latitude]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[Latitude]"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[Latitude]"
+                      name="Latitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[Population]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[Population]"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[Population]"
+                      name="Population"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[AllocationPercentage]"
+                      dataType="r4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[AllocationPercentage]"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[AllocationPercentage]"
+                      name="AllocationPercentage"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[StateFIPCode]"
+                      dataType="i1"
+                      name="StateFIPCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[ZipCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="ZipCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[StateAbbr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="StateAbbr" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[Longitude]"
+                      dataType="r4"
+                      name="Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[Latitude]"
+                      dataType="r4"
+                      name="Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[Population]"
+                      dataType="i4"
+                      name="Population" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].ExternalColumns[AllocationPercentage]"
+                      dataType="r4"
+                      name="AllocationPercentage" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load ZipCode Data\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[ZipCode]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load ZipCode Data\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{17DD5D77-191B-4FB5-A30D-7C4E7B70C56A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost_SQL_2022.AdventureWorks1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StateFIPCode]"
+                      cachedDataType="i1"
+                      cachedName="StateFIPCode"
+                      externalMetadataColumnId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateFIPCode]"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[StateFIPCode]" />
+                    <inputColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ZipCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="ZipCode"
+                      externalMetadataColumnId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ZipCode]"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[ZipCode]" />
+                    <inputColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StateAbbr]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="StateAbbr"
+                      externalMetadataColumnId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateAbbr]"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[StateAbbr]" />
+                    <inputColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Longitude]"
+                      cachedDataType="r4"
+                      cachedName="Longitude"
+                      externalMetadataColumnId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[Longitude]" />
+                    <inputColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Latitude]"
+                      cachedDataType="r4"
+                      cachedName="Latitude"
+                      externalMetadataColumnId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[Latitude]" />
+                    <inputColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Population]"
+                      cachedDataType="i4"
+                      cachedName="Population"
+                      externalMetadataColumnId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Population]"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[Population]" />
+                    <inputColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AllocationPercentage]"
+                      cachedDataType="r4"
+                      cachedName="AllocationPercentage"
+                      externalMetadataColumnId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AllocationPercentage]"
+                      lineageId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output].Columns[AllocationPercentage]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateFIPCode]"
+                      dataType="i2"
+                      name="StateFIPCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ZipCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="ZipCode" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateAbbr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="StateAbbr" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                      dataType="r4"
+                      name="Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                      dataType="r4"
+                      name="Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Population]"
+                      dataType="i4"
+                      name="Population" />
+                    <externalMetadataColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AllocationPercentage]"
+                      dataType="r4"
+                      name="AllocationPercentage" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load ZipCode Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load ZipCode Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load ZipCode Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load ZipCode Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load ZipCode Data.Paths[Flat File Source Output]"
+              endId="Package\Load ZipCode Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Load ZipCode Data\Florida ZipCode File.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Purge ZipCode Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{39CED55B-7D2E-4F16-BF20-A0C7468E1147}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Purge ZipCode Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{17DD5D77-191B-4FB5-A30D-7C4E7B70C56A}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE ZipCode" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{84B2361F-7838-4CDA-BBAF-849776165EBC}"
+      DTS:From="Package\Purge ZipCode Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load ZipCode Data" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="168,41.6"
+          Id="Package\Load ZipCode Data"
+          TopLeft="133.333328035143,133.466667727364" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Purge ZipCode Table"
+          TopLeft="137.499994536241,44.20000035127" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="218.616661285692,85.8000003512701">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.6666673760944"
+              Start="0,0"
+              End="0,40.1666673760944">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.1666673760944" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load ZipCode Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,41.6"
+          Id="Package\Load ZipCode Data\Florida ZipCode File"
+          TopLeft="230.833324160841,104.000000826518" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Load ZipCode Data\OLE DB Destination"
+          TopLeft="224.999991059304,213.200001694361" />
+        <EdgeLayout
+          Id="Package\Load ZipCode Data.Paths[Flat File Source Output]"
+          TopLeft="313.716657610072,145.600000826518">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67.6000008678436"
+              Start="0,0"
+              End="0,60.1000008678436">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60.1000008678436" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load ZipCode Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,3055 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/29/2023 6:44:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DSTEVENSONWIN10"
+  DTS:CreatorName="DSTEVENSONWIN10\drste"
+  DTS:DTSID="{B0E624A8-EBAD-45D7-8583-877FCB30A41C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5035.3"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{555E551F-46D0-4C7C-82C3-AAEBD012A1C3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Archive]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{8EF0E0F6-6CCC-41F8-BA0E-6CA0510744E6}"
+      DTS:ObjectName="Archive">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="D:\ProSSIS\ch08\Archive" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[New Corporation Data Connection]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3CCA05FC-3FC4-4146-AEAF-BF3FD7BF4764}"
+      DTS:ObjectName="New Corporation Data Connection">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::strExtractFileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="filenamedefault">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;CorporateNumber&quot;"
+              DTS:DTSID="{D8DDEFBE-02C7-4F10-8EF7-34666FEF0986}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;CorporationName&quot;"
+              DTS:DTSID="{41E6697E-13FC-46DA-B9F1-61265CCF9A28}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;CorporateStatus&quot;"
+              DTS:DTSID="{9EBDC1BB-6C06-4A8E-AEC2-5E49ECD15DB4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;FilingType&quot;"
+              DTS:DTSID="{44D7FD6D-BDBC-41A5-9AF0-E9B85E641754}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;AddressLine1&quot;"
+              DTS:DTSID="{BDC1D974-B39D-4664-859F-8245A153C774}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;AddressLine2&quot;"
+              DTS:DTSID="{4C11F1BF-1DDF-4A21-8525-6E8BB2C4F8EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;City&quot;"
+              DTS:DTSID="{21708639-7FD4-4CDA-960E-8B4151CBBCC3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;State&quot;"
+              DTS:DTSID="{7D776941-79B0-4173-B9ED-5A0C99002983}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;ZipCode&quot;"
+              DTS:DTSID="{EC93AD6E-1D83-4EBB-9D09-C93C503F9603}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;Country&quot;"
+              DTS:DTSID="{68F2526A-9A6D-4F10-88E4-13456760BF17}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="&quot;FillingDate&quot;"
+              DTS:DTSID="{9608F65E-573D-41FC-B312-1F14D58ADB8E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ED9228FB-88A2-4118-8626-FA5076ED62EE}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="strExtractFileName">
+      <DTS:VariableValue
+        DTS:DataType="8">filenamedefault</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Loop Through Data Files"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{6DD7E383-D3D8-4BA3-9C42-BAC87EF2350D}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Loop Through Data Files">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{DD053D64-3DEE-4585-BA02-96EBDFDB3437}"
+        DTS:ObjectName="{DD053D64-3DEE-4585-BA02-96EBDFDB3437}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="D:\ProSSIS\ch08" />
+            <FEFEProperty
+              FileSpec="*.dat" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Loop Through Data Files\Archive File"
+          DTS:CreationName="Microsoft.FileSystemTask"
+          DTS:Description="Archive File Description"
+          DTS:DTSID="{838EA57C-B63E-4233-BE1A-420933CF7404}"
+          DTS:ExecutableType="Microsoft.FileSystemTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Archive File"
+          DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOverwriteDestFile="True"
+              TaskSourcePath="User::strExtractFileName"
+              TaskIsSourceVariable="True"
+              TaskDestinationPath="Archive" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Loop Through Data Files\Load Corporate Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{19651B07-5E4F-42D0-9543-92040D2A0B1A}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Corporate Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Loop Through Data Files\Load Corporate Data\Audit"
+                  componentClassID="Microsoft.Lineage"
+                  contactInfo="Audit;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Includes data about the environment in which the package runs. Map system variables to new output columns. For example, add the name of the computer and operator to the data flow."
+                  name="Audit">
+                  <inputs>
+                    <input
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Audit.Inputs[Audit Input 1]"
+                      name="Audit Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Audit.Outputs[Audit Output 1]"
+                      exclusionGroup="1"
+                      name="Audit Output 1"
+                      synchronousInputId="Package\Loop Through Data Files\Load Corporate Data\Audit.Inputs[Audit Input 1]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Audit.Outputs[Audit Output 1].Columns[PackageName]"
+                          dataType="wstr"
+                          length="64"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Audit.Outputs[Audit Output 1].Columns[PackageName]"
+                          name="PackageName">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies which audit item this column produces."
+                              name="LineageItemSelected"
+                              typeConverter="LineageItemSelected">2</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Audit.Outputs[Audit Output 1].Columns[TaskName]"
+                          dataType="wstr"
+                          length="64"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Audit.Outputs[Audit Output 1].Columns[TaskName]"
+                          name="TaskName">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies which audit item this column produces."
+                              name="LineageItemSelected"
+                              typeConverter="LineageItemSelected">7</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Error Queue"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[ErrorQueue]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Connections[OleDbConnection]"
+                      connectionManagerID="{17DD5D77-191B-4FB5-A30D-7C4E7B70C56A}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[localhost_SQL_2022.AdventureWorks1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].Columns[&quot;City&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;City&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;City&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].Columns[&quot;State&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;State&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[StateAbbr]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;State&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].Columns[PackageName]"
+                          cachedDataType="wstr"
+                          cachedLength="64"
+                          cachedName="PackageName"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[PackageName]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Audit.Outputs[Audit Output 1].Columns[PackageName]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].Columns[TaskName]"
+                          cachedDataType="wstr"
+                          cachedLength="64"
+                          cachedName="TaskName"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[TaskName]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Audit.Outputs[Audit Output 1].Columns[TaskName]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].Columns[&quot;FilingType&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;FilingType&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[FilingType]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;FilingType&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].Columns[&quot;AddressLine1&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="&quot;AddressLine1&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine1]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;AddressLine1&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].Columns[&quot;AddressLine2&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="&quot;AddressLine2&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine2]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;AddressLine2&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].Columns[&quot;ZipCode&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;ZipCode&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[ZipCode]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;ZipCode&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].Columns[&quot;Country&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;Country&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Country&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].Columns[&quot;FillingDate&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;FillingDate&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[FillingDate]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;FillingDate&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].Columns[&quot;CorporateNumber&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;CorporateNumber&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[CorporateNumber]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporateNumber&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].Columns[&quot;CorporationName&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;CorporationName&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[CorporationName]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporationName&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].Columns[&quot;CorporateStatus&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;CorporateStatus&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[CorporateStatus]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporateStatus&quot;]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[CorporateNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CorporateNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[CorporationName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CorporationName" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[CorporateStatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CorporateStatus" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[FilingType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FilingType" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="AddressLine1" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="AddressLine2" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[StateAbbr]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="StateAbbr" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[ZipCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ZipCode" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Country" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[FillingDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FillingDate" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[PackageName]"
+                          dataType="wstr"
+                          length="64"
+                          name="PackageName" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input].ExternalColumns[TaskName]"
+                          dataType="wstr"
+                          length="64"
+                          name="TaskName" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Find Bad Records"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Inputs[Conditional Split Input].Columns[&quot;City&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;City&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;City&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Inputs[Conditional Split Input].Columns[&quot;State&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;State&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;State&quot;]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Outputs[Missing State or City]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Missing State or City"
+                      synchronousInputId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">[TRIM](#{Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns["State"]}) == "" || [TRIM](#{Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns["City"]}) == ""</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM(["State"]) == "" || TRIM(["City"]) == ""</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Outputs[Good Data]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Good Data"
+                      synchronousInputId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Fix Bad Records"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[ZipCode]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[ZipCode]) [refTable]
+where [refTable].[ZipCode] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="StateFIPCode" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ZipCode" dataType="DT_STR" length="5" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="StateAbbr" dataType="DT_STR" length="2" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="City" dataType="DT_STR" length="16" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Longitude" dataType="DT_R4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Latitude" dataType="DT_R4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Population" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AllocationPercentage" dataType="DT_R4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns["ZipCode"]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Connections[OleDbConnection]"
+                      connectionManagerID="{17DD5D77-191B-4FB5-A30D-7C4E7B70C56A}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[localhost_SQL_2022.AdventureWorks1]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Inputs[Lookup Input].Columns[&quot;ZipCode&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;ZipCode&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;ZipCode&quot;]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">ZipCode</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Inputs[Lookup Input].Columns[StateAbbr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;State&quot;"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;State&quot;]"
+                          name="StateAbbr"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn" />
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">StateAbbr</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Inputs[Lookup Input].Columns[City]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;City&quot;"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;City&quot;]"
+                          name="City"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn" />
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">City</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[New Corporation Data Connection]"
+                      connectionManagerRefId="Package.ConnectionManagers[New Corporation Data Connection]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporateNumber&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;CorporateNumber&quot;]"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporateNumber&quot;]"
+                          name="&quot;CorporateNumber&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporationName&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;CorporationName&quot;]"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporationName&quot;]"
+                          name="&quot;CorporationName&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporateStatus&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;CorporateStatus&quot;]"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporateStatus&quot;]"
+                          name="&quot;CorporateStatus&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;FilingType&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;FilingType&quot;]"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;FilingType&quot;]"
+                          name="&quot;FilingType&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;AddressLine1&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;AddressLine1&quot;]"
+                          length="150"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;AddressLine1&quot;]"
+                          name="&quot;AddressLine1&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;AddressLine2&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;AddressLine2&quot;]"
+                          length="150"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;AddressLine2&quot;]"
+                          name="&quot;AddressLine2&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;City&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;City&quot;]"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;City&quot;]"
+                          name="&quot;City&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;State&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;State&quot;]"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;State&quot;]"
+                          name="&quot;State&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;ZipCode&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;ZipCode&quot;]"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;ZipCode&quot;]"
+                          name="&quot;ZipCode&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Country&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Country&quot;]"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Country&quot;]"
+                          name="&quot;Country&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;FillingDate&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;FillingDate&quot;]"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;FillingDate&quot;]"
+                          name="&quot;FillingDate&quot;"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;CorporateNumber&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;CorporateNumber&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;CorporationName&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;CorporationName&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;CorporateStatus&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;CorporateStatus&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;FilingType&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;FilingType&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;AddressLine1&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;AddressLine1&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;AddressLine2&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;AddressLine2&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;City&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;City&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;State&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;State&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;ZipCode&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;ZipCode&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;Country&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;Country&quot;" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[&quot;FillingDate&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="&quot;FillingDate&quot;" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[MailMergeTable]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{17DD5D77-191B-4FB5-A30D-7C4E7B70C56A}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[localhost_SQL_2022.AdventureWorks1]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[City]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="City"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[City]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StateAbbr]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="StateAbbr"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateAbbr]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[StateAbbr]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[&quot;CorporateNumber&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;CorporateNumber&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CorporateNumber]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;CorporateNumber&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[&quot;CorporationName&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;CorporationName&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CorporationName]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;CorporationName&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[&quot;CorporateStatus&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;CorporateStatus&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CorporateStatus]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;CorporateStatus&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[&quot;FilingType&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;FilingType&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FilingType]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;FilingType&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[&quot;AddressLine1&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="&quot;AddressLine1&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine1]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;AddressLine1&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[&quot;AddressLine2&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="&quot;AddressLine2&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine2]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;AddressLine2&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[&quot;ZipCode&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;ZipCode&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ZipCode]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;ZipCode&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[&quot;Country&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;Country&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;Country&quot;]" />
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[&quot;FillingDate&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;FillingDate&quot;"
+                          externalMetadataColumnId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FillingDate]"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;FillingDate&quot;]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="City" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StateAbbr]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="StateAbbr" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CorporateNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CorporateNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CorporationName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CorporationName" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CorporateStatus]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CorporateStatus" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FilingType]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FilingType" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="AddressLine1" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AddressLine2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          name="AddressLine2" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ZipCode]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ZipCode" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Country" />
+                        <externalMetadataColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FillingDate]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="FillingDate" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Standardize Zip Code"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code.Inputs[Derived Column Input].Columns[&quot;ZipCode&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;ZipCode&quot;"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;ZipCode&quot;]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[SUBSTRING](#{Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns["ZipCode"]},1,5)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">SUBSTRING(["ZipCode"],1,5)</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Loop Through Data Files\Load Corporate Data\Union All"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  name="Union All"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 1]"
+                      name="Union All Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 1].Columns[&quot;CorporateNumber&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;CorporateNumber&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporateNumber&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["CorporateNumber"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 1].Columns[&quot;CorporationName&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;CorporationName&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporationName&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["CorporationName"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 1].Columns[&quot;CorporateStatus&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;CorporateStatus&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporateStatus&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["CorporateStatus"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 1].Columns[&quot;FilingType&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;FilingType&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;FilingType&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["FilingType"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 1].Columns[&quot;AddressLine1&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="&quot;AddressLine1&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;AddressLine1&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["AddressLine1"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 1].Columns[&quot;AddressLine2&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="&quot;AddressLine2&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;AddressLine2&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["AddressLine2"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 1].Columns[&quot;City&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;City&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;City&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[City]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 1].Columns[&quot;State&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;State&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;State&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[StateAbbr]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 1].Columns[&quot;ZipCode&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;ZipCode&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;ZipCode&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["ZipCode"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 1].Columns[&quot;Country&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;Country&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Country&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["Country"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 1].Columns[&quot;FillingDate&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;FillingDate&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;FillingDate&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["FillingDate"]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 3]"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 3].Columns[&quot;CorporateNumber&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;CorporateNumber&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporateNumber&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["CorporateNumber"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 3].Columns[&quot;CorporationName&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;CorporationName&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporationName&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["CorporationName"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 3].Columns[&quot;CorporateStatus&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;CorporateStatus&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;CorporateStatus&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["CorporateStatus"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 3].Columns[&quot;FilingType&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;FilingType&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;FilingType&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["FilingType"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 3].Columns[&quot;AddressLine1&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="&quot;AddressLine1&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;AddressLine1&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["AddressLine1"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 3].Columns[&quot;AddressLine2&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="&quot;AddressLine2&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;AddressLine2&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["AddressLine2"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 3].Columns[&quot;ZipCode&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;ZipCode&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;ZipCode&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["ZipCode"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 3].Columns[&quot;Country&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;Country&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;Country&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["Country"]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 3].Columns[&quot;FillingDate&quot;]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="&quot;FillingDate&quot;"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output].Columns[&quot;FillingDate&quot;]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns["FillingDate"]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 2]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;CorporateNumber&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;CorporateNumber&quot;]"
+                          name="&quot;CorporateNumber&quot;" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;CorporationName&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;CorporationName&quot;]"
+                          name="&quot;CorporationName&quot;" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;CorporateStatus&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;CorporateStatus&quot;]"
+                          name="&quot;CorporateStatus&quot;" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;FilingType&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;FilingType&quot;]"
+                          name="&quot;FilingType&quot;" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;AddressLine1&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;AddressLine1&quot;]"
+                          name="&quot;AddressLine1&quot;" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;AddressLine2&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="150"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;AddressLine2&quot;]"
+                          name="&quot;AddressLine2&quot;" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[City]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[City]"
+                          name="City" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[StateAbbr]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[StateAbbr]"
+                          name="StateAbbr" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;ZipCode&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;ZipCode&quot;]"
+                          name="&quot;ZipCode&quot;" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;Country&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;Country&quot;]"
+                          name="&quot;Country&quot;" />
+                        <outputColumn
+                          refId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;FillingDate&quot;]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1].Columns[&quot;FillingDate&quot;]"
+                          name="&quot;FillingDate&quot;" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Loop Through Data Files\Load Corporate Data.Paths[Audit Output 1]"
+                  endId="Package\Loop Through Data Files\Load Corporate Data\Error Queue.Inputs[OLE DB Destination Input]"
+                  name="Audit Output 1"
+                  startId="Package\Loop Through Data Files\Load Corporate Data\Audit.Outputs[Audit Output 1]" />
+                <path
+                  refId="Package\Loop Through Data Files\Load Corporate Data.Paths[Derived Column Output]"
+                  endId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Inputs[Conditional Split Input]"
+                  name="Derived Column Output"
+                  startId="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Loop Through Data Files\Load Corporate Data.Paths[Flat File Source Output]"
+                  endId="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code.Inputs[Derived Column Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Loop Through Data Files\Load Corporate Data\Flat File Source.Outputs[Flat File Source Output]" />
+                <path
+                  refId="Package\Loop Through Data Files\Load Corporate Data.Paths[Good Data]"
+                  endId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 3]"
+                  name="Good Data"
+                  startId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Outputs[Good Data]" />
+                <path
+                  refId="Package\Loop Through Data Files\Load Corporate Data.Paths[Lookup Match Output]"
+                  endId="Package\Loop Through Data Files\Load Corporate Data\Union All.Inputs[Union All Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Loop Through Data Files\Load Corporate Data.Paths[Lookup No Match Output]"
+                  endId="Package\Loop Through Data Files\Load Corporate Data\Audit.Inputs[Audit Input 1]"
+                  name="Lookup No Match Output"
+                  startId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Loop Through Data Files\Load Corporate Data.Paths[Missing State or City]"
+                  endId="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records.Inputs[Lookup Input]"
+                  name="Missing State or City"
+                  startId="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records.Outputs[Missing State or City]" />
+                <path
+                  refId="Package\Loop Through Data Files\Load Corporate Data.Paths[Union All Output 1]"
+                  endId="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Union All Output 1"
+                  startId="Package\Loop Through Data Files\Load Corporate Data\Union All.Outputs[Union All Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Loop Through Data Files\Script Task"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Script Task"
+          DTS:DTSID="{199EB8A0-F0E6-441A-A977-13DA5D8822D1}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Script Task"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_13d8dec170fb4317ae0a1fc54dbdf226"
+              VSTAMajorVersion="16"
+              VSTAMinorVersion="0"
+              Language="CSharp"
+              ReadOnlyVariables="User::strExtractFileName">
+              <ProjectItem
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Resources.resx"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+              <ProjectItem
+                Name="ScriptMain.cs"
+                Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+#endregion
+
+namespace ST_13d8dec170fb4317ae0a1fc54dbdf226
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+        #region Help:  Using Integration Services variables and parameters in a script
+        /* To use a variable in this script, first ensure that the variable has been added to 
+         * either the list contained in the ReadOnlyVariables property or the list contained in 
+         * the ReadWriteVariables property of this script task, according to whether or not your
+         * code needs to write to the variable.  To add the variable, save this script, close this instance of
+         * Visual Studio, and update the ReadOnlyVariables and 
+         * ReadWriteVariables properties in the Script Transformation Editor window.
+         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+         * 
+         * Example of reading from a variable:
+         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
+         * 
+         * Example of writing to a variable:
+         *  Dts.Variables["User::myStringVariable"].Value = "new value";
+         * 
+         * Example of reading from a package parameter:
+         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
+         *  
+         * Example of reading from a project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
+         * 
+         * Example of reading from a sensitive project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
+         * */
+
+        #endregion
+
+        #region Help:  Firing Integration Services events from a script
+        /* This script task can fire events for logging purposes.
+         * 
+         * Example of firing an error event:
+         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
+         * 
+         * Example of firing an information event:
+         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
+         * 
+         * Example of firing a warning event:
+         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
+         * */
+        #endregion
+
+        #region Help:  Using Integration Services connection managers in a script
+        /* Some types of connection managers can be used in this script task.  See the topic 
+         * "Working with Connection Managers Programatically" for details.
+         * 
+         * Example of using an ADO.Net connection manager:
+         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
+         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
+         *
+         * Example of using a File connection manager
+         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
+         *  string filePath = (string)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
+         * */
+        #endregion
+
+
+		/// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+		public void Main()
+		{
+			// TODO: Add your code here
+			MessageBox.Show(Dts.Variables["User::strExtractFileName"].Value.ToString());
+			Dts.TaskResult = (int)ScriptResults.Success;
+		}
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
+              <ProjectItem
+                Name="ST_13d8dec170fb4317ae0a1fc54dbdf226.csproj"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9201BC4C-9045-4272-B697-B3027A349FBE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_13d8dec170fb4317ae0a1fc54dbdf226</RootNamespace>
+    <AssemblyName>ST_13d8dec170fb4317ae0a1fc54dbdf226</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST160</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_13d8dec170fb4317ae0a1fc54dbdf226</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_13d8dec170fb4317ae0a1fc54dbdf226</msb:DisplayName>
+    <msb:ProjectId>{D7ABF798-3BA2-48F2-AABE-9AD8C246540B}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_13d8dec170fb4317ae0a1fc54dbdf226.csproj" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Settings.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_13d8dec170fb4317ae0a1fc54dbdf226.Properties.Settings.get_Default():ST_13d8dec170fb4317ae0a1fc54dbdf226.Properties.Sett" +
+    "ings")]
+
+namespace ST_13d8dec170fb4317ae0a1fc54dbdf226.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_13d8dec170fb4317ae0a1fc54dbdf226")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_13d8dec170fb4317ae0a1fc54dbdf226")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+              <ProjectItem
+                Name="Properties\Resources.Designer.cs"
+                Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_13d8dec170fb4317ae0a1fc54dbdf226.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_13d8dec170fb4317ae0a1fc54dbdf226.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_13d8dec170fb4317ae0a1fc54dbdf226.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_13d8dec170fb4317ae0a1fc54dbdf226.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_13d8dec170fb4317ae0a1fc54dbdf226.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+              <BinaryItem
+                Name="ST_13d8dec170fb4317ae0a1fc54dbdf226.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAEkwdmQAAAAAAAAAAOAAIiALATAAAA4AAAAIAAAAAAAA6i0A
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAJgtAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA8A0AAAAgAAAADgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAAQAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAFgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADM
+LQAAAAAAAEgAAAACAAUA7CAAAPQLAAABAAAAAAAAAOAsAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAMoCKBAAAApvEQAACnIBAABwbxIAAApvEwAACm8UAAAKKBUA
+AAomAigQAAAKFm8WAAAKKh4CKBcAAAoqHgIoGAAACiqufgEAAAQtHnIzAABw0AMAAAIoGQAACm8a
+AAAKcxsAAAqAAQAABH4BAAAEKhp+AgAABCoeAoACAAAEKhp+AwAABCoeAigcAAAKKi5zCAAABoAD
+AAAEKgAAAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAANwDAAAjfgAASAQAAJAF
+AAAjU3RyaW5ncwAAAADYCQAAqAAAACNVUwCACgAAEAAAACNHVUlEAAAAkAoAAGQBAAAjQmxvYgAA
+AAAAAAACAAABVx2gAQkDAAAA+gEzABYAAAEAAAAfAAAABQAAAAYAAAAJAAAAAQAAABwAAAACAAAA
+EAAAAAIAAAADAAAABAAAAAEAAAAFAAAAAQAAAAEAAAAAAHUDAQAAAAAABgAlAkUEBgC0AkUEBgBx
+ATIEDwC5BAAABgCeAfMDBgAIAvMDBgDpAfMDBgCbAvMDBgBFAvMDBgBeAvMDBgC1AfMDBgDQAeIC
+CgB5AiQDCgDwACQDBgCtA6YDBgBUATIEBgBBBaYDBgAVBGUEBgAFBN4DDgAkAV8DDgCFAV8DDgAM
+AckDBgA5AUUECgBNAyQDEgD7BJsAEgBuAJsAFgB1BQ4FFgBUBQ4FBgC7AKYDBgB3AKYDBgCEBfMD
+AAAAACUAAAAAAAEAAQABABAAvgMBADkAAQABAAAAEABsBMgERQABAAMAAAEQAAUFyARZAAMABwAD
+AQAAMwUAAD0ABAAKABEAsgNoABEA4ABsABEAXgBwAAYGTQB0AFaAIwV3AFaAwAB3AFAgAAAAAIYA
+xAMGAAEAgyAAAAAAhhglBAYAAQCLIAAAAACDGCUEBgABAJMgAAAAAJMIEQR7AAEAvyAAAAAAkwjI
+AIAAAQDGIAAAAACTCNQAhQABAM4gAAAAAJYISAWLAAIA1SAAAAAAhhglBAYAAgDdIAAAAACRGCsE
+kAACAAAAAQDcAgkAJQQBABEAJQQGABkAJQQKACkAJQQQADEAJQQQADkAJQQQAEEAJQQQAEkAJQQQ
+AFEAJQQQAFkAJQQQAGEAJQQQAGkAJQQGAIEAJQQGAKkAJQQVALkAJQQGAHEAKwUbAMEA9wQgAMkA
+nQMlANEA0gIrAIkA/AIvANkAcAUzAMEAYQUBAHEAJQQGAIkAJQQGAOkAiQA5AOkAgAVAAJEAJQRF
+ALEAJQQGAAgAFABeAAgAGABjACkAcwDLAC4ACwCjAC4AEwCsAC4AGwDLAC4AIwDUAC4AKwD9AC4A
+MwD9AC4AOwD9AC4AQwDUAC4ASwADAS4AUwD9AC4AWwAaAUMAYwBjAEkAcwDLAGEAewBjAGMAawBj
+AAMAAQAEAAMAAAAVBJQAAADoAJkAAABMBZ4AAgAEAAMAAgAFAAUAAQAGAAUAAgAHAAcABIAAAAEA
+AABmIcRdAAAAAAAAAQAAAAQAAAAAAAAAAAAAAEwAVQAAAAAAEAAAAAAAAAAAAAAAVQAFAwAAAAAE
+AAAAAAAAAAAAAABMAKYDAAAAABAAAAAAAAAAAAAAAFUALgAAAAAABAAAAAAAAAAAAAAATAAOBQAA
+AAAAAAAAAQAAAHYEAAAFAAIAAAAAU1RfMTNkOGRlYzE3MGZiNDMxN2FlMGExZmM1NGRiZGYyMjYA
+PE1vZHVsZT4ATWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAHZhbHVlX18AbXNjb3JsaWIA
+ZGVmYXVsdEluc3RhbmNlAFZhcmlhYmxlAFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFu
+ZGxlAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAVHlwZQBGYWlsdXJlAGdldF9DdWx0
+dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVyZQBWU1RBUlRTY3JpcHRPYmplY3RNb2RlbEJh
+c2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJH
+ZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxl
+QXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRl
+AEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3Nl
+bWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBD
+b21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBB
+c3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0VGFza0VudHJ5UG9pbnRBdHRyaWJ1
+dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRl
+AGdldF9WYWx1ZQB2YWx1ZQBTeXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5nAE1pY3Jv
+c29mdC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5UYXNrcy5T
+Y3JpcHRUYXNrAFNjcmlwdE9iamVjdE1vZGVsAFN5c3RlbS5Db21wb25lbnRNb2RlbABTVF8xM2Q4
+ZGVjMTcwZmI0MzE3YWUwYTFmYzU0ZGJkZjIyNi5kbGwAZ2V0X0l0ZW0AU3lzdGVtAEVudW0AcmVz
+b3VyY2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXph
+dGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBDdWx0dXJlSW5mbwBnZXRfUmVzb3VyY2VNYW5hZ2VyAC5j
+dG9yAC5jY3RvcgBTeXN0ZW0uRGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2
+aWNlcwBTeXN0ZW0uUmVzb3VyY2VzAFNUXzEzZDhkZWMxNzBmYjQzMTdhZTBhMWZjNTRkYmRmMjI2
+LlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTVF8xM2Q4ZGVj
+MTcwZmI0MzE3YWUwYTFmYzU0ZGJkZjIyNi5Qcm9wZXJ0aWVzAGdldF9WYXJpYWJsZXMAU2V0dGlu
+Z3MAU3lzdGVtLldpbmRvd3MuRm9ybXMAU3VjY2VzcwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMAT2Jq
+ZWN0AGdldF9EZWZhdWx0AERpYWxvZ1Jlc3VsdABzZXRfVGFza1Jlc3VsdABTaG93AE1lc3NhZ2VC
+b3gAZ2V0X0Fzc2VtYmx5AAAAAAAxVQBzAGUAcgA6ADoAcwB0AHIARQB4AHQAcgBhAGMAdABGAGkA
+bABlAE4AYQBtAGUAAHFTAFQAXwAxADMAZAA4AGQAZQBjADEANwAwAGYAYgA0ADMAMQA3AGEAZQAw
+AGEAMQBmAGMANQA0AGQAYgBkAGYAMgAyADYALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMA
+bwB1AHIAYwBlAHMAAAAAAIljypHu7nlIkWPmhYJOjwYABCABAQgDIAABBSABARERBCABAQ4FIAEB
+EVEEIAASYQQgABJlBSABEmkcAyAAHAMgAA4FAAERcQ4GAAESdRF5BCAAEn0GIAIBDhJ9CLd6XFYZ
+NOCJCImEXc2AgMyRBAAAAAAEAQAAAAMGEkkDBhJNAwYSEAIGCAMGERQEAAASSQQAABJNBQABARJN
+BAAAEhADAAABBAgAEkkECAASTQQIABIQCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9u
+VGhyb3dzAQgBAAIAAAAAACgBACNTVF8xM2Q4ZGVjMTcwZmI0MzE3YWUwYTFmYzU0ZGJkZjIyNgAA
+BQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDIzAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0
+LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuN7QAAADOyu++AQAA
+AJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249
+NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5
+I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQA
+AADALQAAAAAAAAAAAADaLQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzC0AAAAAAAAAAAAAAABf
+Q29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAA
+AAAASAAAAFhAAAAaBAAAAAAAAAAAAAAaBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYA
+TwAAAAAAvQTv/gAAAQAAAAEAxF1mIQAAAQDEXWYhPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAA
+AEQAAAABAFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkA
+bwBuAAAAAAAAALAEegMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAVgMAAAEAMAAw
+ADAAMAAwADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAA
+YQBuAHkATgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBu
+AAAAAABTAFQAXwAxADMAZAA4AGQAZQBjADEANwAwAGYAYgA0ADMAMQA3AGEAZQAwAGEAMQBmAGMA
+NQA0AGQAYgBkAGYAMgAyADYAAAA+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAw
+AC4AOAA1ADUAMAAuADIANAAwADAANAAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUA
+AABTAFQAXwAxADMAZAA4AGQAZQBjADEANwAwAGYAYgA0ADMAMQA3AGEAZQAwAGEAMQBmAGMANQA0
+AGQAYgBkAGYAMgAyADYALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgA
+dAAAAEMAbwBwAHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADIAMwAAACoAAQABAEwAZQBnAGEAbABU
+AHIAYQBkAGUAbQBhAHIAawBzAAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUA
+bgBhAG0AZQAAAFMAVABfADEAMwBkADgAZABlAGMAMQA3ADAAZgBiADQAMwAxADcAYQBlADAAYQAx
+AGYAYwA1ADQAZABiAGQAZgAyADIANgAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEA
+bQBlAAAAAABTAFQAXwAxADMAZAA4AGQAZQBjADEANwAwAGYAYgA0ADMAMQA3AGEAZQAwAGEAMQBm
+AGMANQA0AGQAYgBkAGYAMgAyADYAAABCAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4A
+AAAxAC4AMAAuADgANQA1ADAALgAyADQAMAAwADQAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAg
+AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADgANQA1ADAALgAyADQAMAAwADQAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAMAAAA7D0A
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
+            </ScriptProject>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Loop Through Data Files.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{01B19A4F-8CA3-439B-829C-997475CD0643}"
+          DTS:From="Package\Loop Through Data Files\Load Corporate Data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Loop Through Data Files\Archive File" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Loop Through Data Files.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{5EA156E4-5FDD-43FB-AC61-5B2624DC3B19}"
+          DTS:From="Package\Loop Through Data Files\Script Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Loop Through Data Files\Load Corporate Data" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{17D06A8D-A35F-4131-A514-EE95118D09E1}"
+          DTS:ObjectName="{17D06A8D-A35F-4131-A514-EE95118D09E1}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::strExtractFileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\Loop Through Data Files\Archive File"
+          TopLeft="78.8999907612804,188.20000266552" />
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Loop Through Data Files\Load Corporate Data"
+          TopLeft="74.7333242601828,95.1333366325167" />
+        <NodeLayout
+          Size="130.4,41.6"
+          Id="Package\Loop Through Data Files\Script Task"
+          TopLeft="88.8999903639163,10.5333345868853" />
+        <EdgeLayout
+          Id="Package\Loop Through Data Files.PrecedenceConstraints[Constraint]"
+          TopLeft="162.333324260183,136.733336632517">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-17.0333334989024,51.4666660330033"
+              Start="0,0"
+              End="-17.0333334989024,43.9666660330033">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7333330165016" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.7333330165016"
+                    Point2="0,25.7333330165016"
+                    Point3="-4,25.7333330165016" />
+                  <mssgle:LineSegment
+                    End="-13.0333334989024,25.7333330165016" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.0333334989024,25.7333330165016"
+                    Point2="-17.0333334989024,25.7333330165016"
+                    Point3="-17.0333334989024,29.7333330165016" />
+                  <mssgle:LineSegment
+                    End="-17.0333334989024,43.9666660330033" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop Through Data Files.PrecedenceConstraints[Constraint 1]"
+          TopLeft="154.099990363916,52.1333345868853">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.23333389626649,43.0000020456314"
+              Start="0,0"
+              End="8.23333389626649,35.5000020456314">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5000010228157" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5000010228157"
+                    Point2="0,21.5000010228157"
+                    Point3="4,21.5000010228157" />
+                  <mssgle:LineSegment
+                    End="4.23333389626649,21.5000010228157" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.23333389626649,21.5000010228157"
+                    Point2="8.23333389626649,21.5000010228157"
+                    Point3="8.23333389626649,25.5000010228157" />
+                  <mssgle:LineSegment
+                    End="8.23333389626649,35.5000020456314" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="370.4,400"
+          Size="370.4,443.2"
+          Id="Package\Loop Through Data Files"
+          TopLeft="153.333327240415,104.000000826518" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Loop Through Data Files\Load Corporate Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Loop Through Data Files\Load Corporate Data\Flat File Source"
+          TopLeft="213.782042787117,106.666667514377" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records"
+          TopLeft="211.805547139159,361.833336208927" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination"
+          TopLeft="631.24997491638,314.888891391401" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Loop Through Data Files\Load Corporate Data\Error Queue"
+          TopLeft="210.41665830546,525.055559728322" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Loop Through Data Files\Load Corporate Data\Union All"
+          TopLeft="448.611093284908,315.611113619363" />
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\Loop Through Data Files\Load Corporate Data\Standardize Zip Code"
+          TopLeft="199.166658752495,200.200001591047" />
+        <NodeLayout
+          Size="139.2,41.6"
+          Id="Package\Loop Through Data Files\Load Corporate Data\Audit"
+          TopLeft="223.611102225604,433.333336777157" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Loop Through Data Files\Load Corporate Data\Find Bad Records"
+          TopLeft="202.499991953373,275.600002190272" />
+        <EdgeLayout
+          Id="Package\Loop Through Data Files\Load Corporate Data.Paths[Good Data]"
+          TopLeft="364.099991953373,296.400002190272">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84.5111013315345,34.4111114290909"
+              Start="0,0"
+              End="77.0111013315345,34.4111114290909">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="44.8286363248866,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="44.8286363248866,0"
+                    Point2="48.8286363248866,0"
+                    Point3="48.8286363248866,4" />
+                  <mssgle:LineSegment
+                    End="48.8286363248866,30.4111114290909" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48.8286363248866,30.4111114290909"
+                    Point2="48.8286363248866,34.4111114290909"
+                    Point3="52.8286363248866,34.4111114290909" />
+                  <mssgle:LineSegment
+                    End="77.0111013315345,34.4111114290909" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-5.0006214876134,-17.609375,107.658515625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop Through Data Files\Load Corporate Data.Paths[Flat File Source Output]"
+          TopLeft="289.074350769806,148.266667514377">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.9333340766697"
+              Start="0,0"
+              End="0,44.4333340766697">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.4333340766697" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.80947265625,16.5950850070849,49.6189453125,11.2431640625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop Through Data Files\Load Corporate Data.Paths[Derived Column Output]"
+          TopLeft="286.033325352934,241.800001591047">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.8000005992253"
+              Start="0,0"
+              End="0,26.3000005992253">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.3000005992253" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.80947265625,7.52841826836265,49.6189453125,11.2431640625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop Through Data Files\Load Corporate Data.Paths[Audit Output 1]"
+          TopLeft="296.813880265532,474.933336777157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.1222229511648"
+              Start="0,0"
+              End="0,42.6222229511648">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.6222229511648" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.3901171875,16.5244903818324,30.780234375,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop Through Data Files\Load Corporate Data.Paths[Union All Output 1]"
+          TopLeft="568.611093284908,336.050002505382">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.6388816314719,0"
+              Start="0,0"
+              End="55.1388816314719,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.1388816314719,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="2.75996815948595,5,49.6189453125,11.2236328125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop Through Data Files\Load Corporate Data.Paths[Missing State or City]"
+          TopLeft="286.352769546266,317.200002190272">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.6333340186546"
+              Start="0,0"
+              End="0,37.1333340186546">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.1333340186546" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-65.57173828125,12.7351240405773,131.1434765625,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop Through Data Files\Load Corporate Data.Paths[Lookup No Match Output]"
+          TopLeft="291.308324682382,403.433336208927">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.9000005682307"
+              Start="0,0"
+              End="0,22.4000005682307">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.4000005682307" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-75.69173828125,5.39531278411535,151.3834765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Loop Through Data Files\Load Corporate Data.Paths[Lookup Match Output]"
+          TopLeft="367.005547139159,382.633336208927">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81.6055461457485,-40.6222225895638"
+              Start="0,0"
+              End="74.1055461457485,-40.6222225895638">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="43.1498711064324,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.1498711064324,0"
+                    Point2="47.1498711064324,0"
+                    Point3="47.1498711064324,-4" />
+                  <mssgle:LineSegment
+                    End="47.1498711064324,-36.6222225895638" />
+                  <mssgle:CubicBezierSegment
+                    Point1="47.1498711064324,-36.6222225895638"
+                    Point2="47.1498711064324,-40.6222225895638"
+                    Point3="51.1498711064324,-40.6222225895638" />
+                  <mssgle:LineSegment
+                    End="74.1055461457485,-40.6222225895638" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.9268671748176,1,136.1534765625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Loop Through Data Files\Load Corporate Data\Fix Bad Records">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[ZipCode]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Loop Through Data Files\Load Corporate Data\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Loop Through Data Files\Load Corporate Data\Error Queue">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
